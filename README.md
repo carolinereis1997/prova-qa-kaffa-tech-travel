@@ -74,14 +74,14 @@ O link apresentado na aplicação direciona para um endereço diferente do confi
 **Severidade:** Média  
 **Prioridade:** Média
 
-### BUG-007 - Validação de e-mail aceita formato inválido
+### BUG-007 - Validação de e-mail permite endereço sem ponto no domínio
 
-O formulário de contato permite o preenchimento de um endereço de e-mail em formato inválido.
+O campo de e-mail do formulário de contato permite o preenchimento de endereços que possuem o caractere `@`, mas não possuem um ponto (`.`) no domínio, como `111@111`.
 
-**Severidade:** Média  
-**Prioridade:** Média
+**Severidade:** Alta  
+**Prioridade:** Alta
 
-### BUG-008 - Calculadora aceita caracteres não numéricos no campo "Valor da passagem"
+### BUG-008 - Calculadora permite caracteres não numéricos no campo "Valor da passagem"
 
 O campo permite a inserção de caracteres não numéricos e, posteriormente, apresenta um resultado inválido.
 
@@ -130,21 +130,14 @@ O campo de telefone do formulário de envio de mensagem permite a inserção de 
 **Severidade:** Baixa  
 **Prioridade:** Média
 
-### BUG-015 - Campo "Valor da passagem" não aplica máscara de moeda (R$)
-
-O campo "Valor da passagem", presente na calculadora de orçamento, não aplica máscara de moeda no formato Real (R$) durante o preenchimento do valor.
-
-**Severidade:** Baixa  
-**Prioridade:** Média
-
-### BUG-016 - Campos da calculadora permitem a inserção de letras
+### BUG-015 - Campos da calculadora permitem a inserção de letras
 
 Os campos "Número de pessoas", "Valor da passagem" e "Dias de hospedagem" permitem a inserção de caracteres alfabéticos, embora sejam destinados ao preenchimento de valores numéricos.
 
 **Severidade:** Média  
 **Prioridade:** Alta
 
-### BUG-017 - Formulário de contato aceita e-mail em formato inválido
+### BUG-016 - Formulário de contato aceita e-mail em formato inválido
 
 O formulário de envio de mensagem permite realizar o envio mesmo quando o campo de e-mail é preenchido com um formato inválido, como `123@2com`, exibindo a mensagem "Enviada com sucesso".
 
@@ -163,6 +156,13 @@ Sugestão de melhoria para identificar visualmente quais campos são obrigatóri
 
 Sugestão de melhoria para facilitar a identificação dos campos obrigatórios na calculadora de orçamento.
 
+### Melhoria III - Aplicar máscara de moeda em Real (R$) no campo "Valor da passagem"
+
+Foi identificado que o campo "Valor da passagem", presente na Calculadora de Orçamento, não aplica máscara de moeda durante o preenchimento do valor. Como o campo indica "(R$)", a aplicação de uma máscara no padrão brasileiro poderia facilitar a visualização e interpretação do valor informado.
+
+**Severidade:** Baixa  
+**Prioridade:** Baixa
+
 ---
 
 ## 🤖 Testes Automatizados com Cypress
@@ -176,3 +176,9 @@ Um dos testes foi mantido propositalmente como falha para demonstrar a identific
 
 ---
 
+## ▶️ Como executar os testes
+
+Instale as dependências do projeto:
+
+```bash
+npm install
