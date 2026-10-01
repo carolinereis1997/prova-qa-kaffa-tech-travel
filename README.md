@@ -123,6 +123,34 @@ A imagem utilizada no banner da página inicial não é carregada corretamente.
 **Severidade:** Baixa  
 **Prioridade:** Média
 
+### BUG-014 - Campo de telefone permite o preenchimento com letras
+
+O campo de telefone do formulário de envio de mensagem permite a inserção de letras, embora seja destinado ao preenchimento de um número de telefone.
+
+**Severidade:** Baixa  
+**Prioridade:** Média
+
+### BUG-015 - Campo "Valor da passagem" não aplica máscara de moeda (R$)
+
+O campo "Valor da passagem", presente na calculadora de orçamento, não aplica máscara de moeda no formato Real (R$) durante o preenchimento do valor.
+
+**Severidade:** Baixa  
+**Prioridade:** Média
+
+### BUG-016 - Campos da calculadora permitem a inserção de letras
+
+Os campos "Número de pessoas", "Valor da passagem" e "Dias de hospedagem" permitem a inserção de caracteres alfabéticos, embora sejam destinados ao preenchimento de valores numéricos.
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
+### BUG-017 - Formulário de contato aceita e-mail em formato inválido
+
+O formulário de envio de mensagem permite realizar o envio mesmo quando o campo de e-mail é preenchido com um formato inválido, como `123@2com`, exibindo a mensagem "Enviada com sucesso".
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
 ---
 
 ## 💡 Melhorias Identificadas
