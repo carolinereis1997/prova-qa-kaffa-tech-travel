@@ -1,183 +1,150 @@
-# 🐛 Prova de QA - Kaffa Tech Travel
+# Desafio QA - Kaffa Tech Travel
 
-## 📋 Sobre a Prova
-Prova de validação para equipe de QA. O objetivo é encontrar bugs em um site de agência de viagens e criar testes automatizados.
+## 📌 Sobre o projeto
 
----
+Este projeto foi desenvolvido como parte do desafio técnico de QA da Kaffa Tech Travel.
 
-## 📂 Estrutura de Pastas
-
-```
-prova-qa-kaffa/
-│
-├── index.html              ← Página inicial (ABRIR ESTE ARQUIVO)
-│
-├── pages/                  ← Páginas internas
-│   ├── sobre.html
-│   ├── destinos.html
-│   ├── depoimentos.html
-│   ├── noticias.html
-│   └── contato.html
-│
-├── assets/                 ← Recursos do site
-│   ├── css/
-│   │   └── styles.css
-│   │
-│   ├── js/
-│   │   ├── script.js
-│   │   └── script-destinos.js
-│   │
-│   └── images/
-│       ├── banner1.jpg
-│       ├── banner2.jpg
-│       ├── banner3.jpg
-│       ├── paris.jpg
-│       ├── toquio.jpg
-│       ├── nova-york.jpg
-│       └── rio.jpg
-```
+O objetivo foi explorar a aplicação, identificar possíveis problemas e registrar os resultados dos testes, além de desenvolver testes automatizados utilizando Cypress.
 
 ---
 
-## 🚀 Como Executar
+## 🔎 Estratégia de Teste Exploratório
 
-### Opção 1: Clique Duplo
-1. Navegue até a pasta `prova-qa-kaffa/`
-2. Dê **duplo clique** no arquivo `index.html`
-3. O site abrirá no seu navegador padrão
+Para a execução deste desafio, realizei testes exploratórios na aplicação, buscando investigar os principais fluxos e identificar comportamentos inesperados, inconsistências e possíveis falhas.
 
-### Opção 2: Arrastar para o Navegador
-1. Abra seu navegador (Chrome, Firefox, Edge, etc.)
-2. Arraste o arquivo `index.html` para a janela do navegador
+Como base para a exploração, utilizei heurísticas de teste apresentadas no Test Heuristic Cheat Sheet, da Test Obsessed, juntamente com os conhecimentos e a abordagem de testes exploratórios aprendidos durante minha mentoria em QA com Júlio de Lima.
 
-### Opção 3: Menu de Contexto
-1. Clique com o **botão direito** no `index.html`
-2. Selecione **"Abrir com"**
-3. Escolha seu navegador preferido
+A partir dessa abordagem, explorei diferentes comportamentos da aplicação, incluindo:
 
----
-
-## 📝 Instruções
-
-### Parte 1: Identificação e Documentação de Problemas
-
-**Instruções:**
-
-1. Abra o arquivo `index.html` que você recebeu da Codex
-2. Explore todas as seções do site, incluindo:
-   * Página Inicial
-   * Sobre Nós
-   * Destinos
-   * Depoimentos
-   * Calculadora de Orçamento
-   * Notícias
-   * Contato
-3. Identifique todos os problemas que encontrar, incluindo, mas não se limitando a:
-   * Erros funcionais
-   * Problemas de usabilidade
-   * Inconsistências visuais
-   * Erros de conteúdo
-   * Problemas de performance
-   * Questões de acessibilidade
-
-**Para cada problema encontrado, documente em novo arquivo .doc:**
-
-1. Título do problema
-2. Descrição detalhada
-3. Passos para reproduzir
-4. Resultado esperado vs. Resultado atual
-5. Severidade (Crítica, Alta, Média, Baixa)
-6. Prioridade (Alta, Média, Baixa)
-7. Evidências (screenshots, logs, etc.)
-
-**Formato de Documentação:**
-
-Use a seguinte estrutura para cada problema:
-
-```
-Título: [Título conciso do problema]
-
-Descrição: [Descrição detalhada do problema]
-
-Passos para Reproduzir:
-1. [Passo 1]
-2. [Passo 2]
-3. [...]
-
-Resultado Esperado: [O que deveria acontecer]
-
-Resultado Atual: [O que realmente acontece]
-
-Severidade: [Crítica/Alta/Média/Baixa]
-
-Prioridade: [Alta/Média/Baixa]
-
-Evidências: [Anexe ou descreva as evidências coletadas]
-```
+- Cenários positivos e negativos;
+- Entradas inválidas;
+- Valores-limite;
+- Navegação;
+- Validações;
+- Usabilidade;
+- Responsividade;
+- Conteúdo;
+- Elementos visuais.
 
 ---
 
-### Parte 2: Criação de Testes Automatizados com Cypress
+## 🐞 Bugs Identificados
 
-**Instruções:**
+Durante os testes exploratórios, foram identificados os seguintes problemas:
 
-1. Crie dois cenários de teste automatizado usando Cypress:
-   - a. Um teste que passe com sucesso
-   - b. Um teste que falhe intencionalmente
-2. Os testes devem cobrir funcionalidades relevantes do site Kaffa Tech Travel
-3. Publique o código dos testes em um repositório público no GitHub
+### BUG-001 - Botão "Voltar ao Topo" não retorna a página ao início
 
-**Requisitos para os Testes:**
+O botão é apresentado na página, porém ao ser acionado não realiza o retorno ao início da página.
 
-* Use boas práticas de automação de testes
-* Inclua comentários explicativos no código
-* Estruture os testes de forma clara e legível
-* Use asserções apropriadas para validar os resultados esperados
+**Severidade:** Baixa  
+**Prioridade:** Média
+
+### BUG-002 - Ícone "Voltar ao Topo" desalinhado
+
+O ícone apresentado dentro do botão "Voltar ao Topo" não está visualmente alinhado.
+
+**Severidade:** Baixa  
+**Prioridade:** Baixa
+
+### BUG-003 - Menu de navegação duplicado na aba "Sobre Nós"
+
+Ao acessar a página "Sobre Nós", o menu de navegação é apresentado novamente, gerando duplicidade dos itens.
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
+### BUG-004 - Erros de ortografia na página "Sobre Nós"
+
+Foram identificados erros de ortografia no conteúdo da página.
+
+**Severidade:** Baixa  
+**Prioridade:** Média
+
+### BUG-005 - Links das redes sociais direcionam para páginas incorretas ou indisponíveis
+
+Os links das redes sociais apresentam destinos incorretos ou páginas indisponíveis.
+
+**Severidade:** Baixa  
+**Prioridade:** Média
+
+### BUG-006 - Link "Veja nossa página de notícias" direciona para endereço diferente do configurado
+
+O link apresentado na aplicação direciona para um endereço diferente do configurado na aplicação.
+
+**Severidade:** Média  
+**Prioridade:** Média
+
+### BUG-007 - Validação de e-mail aceita formato inválido
+
+O formulário de contato permite o preenchimento de um endereço de e-mail em formato inválido.
+
+**Severidade:** Média  
+**Prioridade:** Média
+
+### BUG-008 - Calculadora aceita caracteres não numéricos no campo "Valor da passagem"
+
+O campo permite a inserção de caracteres não numéricos e, posteriormente, apresenta um resultado inválido.
+
+**Severidade:** Média  
+**Prioridade:** Média
+
+### BUG-009 - Menu de navegação não se adapta corretamente à resolução mobile
+
+Ao acessar a aplicação em resolução mobile, o menu de navegação apresenta problemas de adaptação.
+
+**Severidade:** Média  
+**Prioridade:** Média
+
+### BUG-010 - Calculadora permite valores negativos
+
+Os campos "Número de pessoas" e "Dias de hospedagem" permitem a inserção de valores negativos.
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
+### BUG-011 - Sistema permite orçamento para usuário que ainda não completou 18 anos
+
+A calculadora permite realizar o orçamento para uma pessoa que ainda não completou 18 anos.
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
+### BUG-012 - Formulário informa envio realizado, mas a mensagem não é enviada por e-mail
+
+Após o preenchimento do formulário de contato, a aplicação apresenta a mensagem de sucesso, porém a mensagem não é recebida por e-mail.
+
+**Severidade:** Média  
+**Prioridade:** Alta
+
+### BUG-013 - Imagem quebrada no banner da página inicial
+
+A imagem utilizada no banner da página inicial não é carregada corretamente.
+
+**Severidade:** Baixa  
+**Prioridade:** Média
 
 ---
 
-## 📤 Entrega
+## 💡 Melhorias Identificadas
 
-1. Documento contendo:
-   * Todos os problemas identificados e documentados conforme o formato especificado
-   * Link para o repositório GitHub com os testes automatizados
-2. Envie o documento e o link do GitHub para o endereço de e-mail: **tamires.cristine@atmis.com.br**
+### Melhoria I - Identificação visual dos campos obrigatórios no formulário de contato
 
----
+Sugestão de melhoria para identificar visualmente quais campos são obrigatórios antes do preenchimento.
 
-## ✅ Critérios de Avaliação
+### Melhoria II - Identificação visual dos campos obrigatórios na calculadora
 
-* Completude e precisão na identificação de problemas
-* Clareza e detalhe na documentação dos problemas
-* Priorização apropriada dos problemas identificados
-* Qualidade e eficácia dos testes automatizados
-* Habilidade de escrita de código limpo e bem estruturado
-* Capacidade de seguir instruções e atenção aos detalhes
+Sugestão de melhoria para facilitar a identificação dos campos obrigatórios na calculadora de orçamento.
 
 ---
 
-## ⏰ Prazo
+## 🤖 Testes Automatizados com Cypress
 
-Você tem **48 horas** para completar esta prova a partir do recebimento destas instruções.
+Foram criados dois testes automatizados para a calculadora de orçamento:
 
----
+- **Teste positivo:** verifica se o cálculo do orçamento é realizado corretamente com dados válidos.
+- **Teste negativo:** verifica o bloqueio de orçamento para usuário menor de 18 anos.
 
-## ⚠️ Observações Importantes sobre a prova
-
-- ✅ Todos os arquivos devem estar na estrutura de pastas correta
-- ✅ As imagens devem estar na pasta `assets/images/`
-- ✅ Não é necessário servidor local, funciona direto no navegador
-- ✅ Site compatível com Chrome, Firefox, Edge e Safari
+Um dos testes foi mantido propositalmente como falha para demonstrar a identificação de um comportamento incorreto da aplicação.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3 (com Glassmorphism)
-- JavaScript (Vanilla)
-- Google Fonts (Poppins e Playfair Display)
-
----
-
-**Boa sorte! 🍀**
