@@ -1,0 +1,24 @@
+{
+  "name": "provaqa2.0-2",
+  "version": "1.0.0",
+  "description": "Prova de validação para equipe de QA. O objetivo é encontrar bugs em um site de agência de viagens e criar testes automatizados.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolinereis1997/prova-qa-kaffa-tech-travel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/carolinereis1997/prova-qa-kaffa-tech-travel/issues"
+  },
+  "homepage": "https://github.com/carolinereis1997/prova-qa-kaffa-tech-travel#readme",
+  "devDependencies": {
+    "cypress": "^16.1.1"
+  }
+}
